@@ -13,12 +13,17 @@
                         <a href="/news" class="c-header__link">News</a>
                         <a href="/whats-on" class="c-header__link">What's On</a>
                         <a href="/contact" class="c-header__link">Contact</a>
+                        <div class="c-header__hamburger-button">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </div>
                 <div class="c-header__title-wrapper">
                     <div class="c-header__headers">
-                        <h1 class="c-header__heading">Welcome</h1>
-                        <h4 class="c-header__sub-heading">To Whitby Evanglical Church</h4>
+                        <h1 class="c-header__heading"><perch:content id="heading" label="Header" type="text"></h1>
+                        <h4 class="c-header__sub-heading"><perch:content id="sub_heading" label="Sub-Header" type="text"></h4>
                         <div class="c-header__buttons">
                             <a class="c-header__button c-header__button--primary" href="/audio-library/">
                                 Listen Online
@@ -31,14 +36,26 @@
                 </div>
             </div>
         </div>
-        <div class="c-hamburger">
-            <div class="c-hamburger__wrapper">
-                <a href="/" class="c-hamburger__link">Home</a>
-                <a href="/about" class="c-hamburger__link">About</a>
-                <a href="/audio-library/" class="c-hamburger__link">Audio Library</a>
-                <a href="/news" class="c-hamburger__link">News</a>
-                <a href="/whats-on" class="c-hamburger__link">What's On</a>
-                <a href="/contact" class="c-hamburger__link">Contact</a>
-            </div>
-        </div>
+        <script>
+            const hamburgerButton = document.getElementsByClassName("c-header__hamburger-button")[0];
+            const hamburgerMenuRect = document.getElementsByClassName("c-hamburger")[0].getBoundingClientRect();
+            const content = document.getElementById("content");
+            hamburgerButton.addEventListener("click", () => {
+                console.log(document.body.style.transform)
+                if (document.body.style.transform) {
+                    document.body.style.transform = "";
+                    document.body.style.overflowX = "hidden";
+                    document.body.style.overflowY = "scroll";
+                    content.style.overflowX = "hidden";
+                    content.style.overflowY = "auto";
+                } else {
+                    const hamburgerWidth = hamburgerMenuRect.right - hamburgerMenuRect.left;
+                    document.body.style.transform = `translateX(-${hamburgerWidth}px)`;
+                    document.body.style.overflowX = "auto";
+                    document.body.style.overflowY = "hidden";
+                    content.style.overflowX = "auto";
+                    content.style.overflowY = "auto";
+                }
+            })
+        </script>
 </header>

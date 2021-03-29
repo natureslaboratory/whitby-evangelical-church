@@ -231,7 +231,7 @@ h2, h3 {
 
 body {
   font-family: "Segoe UI", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
   overflow-y: scroll;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
@@ -341,6 +341,15 @@ body {
   gap: 10px;
 }
 
+.c-header .c-header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .c-header .c-header__link {
   color: white;
   text-decoration: none;
@@ -398,6 +407,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .c-header .c-header__button {
@@ -426,10 +440,112 @@ body {
   background: white;
 }
 
-.c-hamburger {
-  position: fixed;
+.c-header .c-header__hamburger-button {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+  width: 18px;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.c-header .c-header__hamburger-button div {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .c-header .c-header__link {
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .c-header .c-header__title-wrapper {
+    height: 300px;
+  }
+  .c-header .c-header__heading {
+    font-size: 4rem;
+  }
+  .c-header .c-header__sub-heading {
+    font-size: 1.5rem;
+  }
+  .c-header .c-header__link {
+    display: none;
+  }
+  .c-header .c-header__hamburger-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .c-header .c-header__button {
+    width: 140px;
+  }
+}
+
+.c-header.c-header--small .c-header__title-wrapper {
+  height: auto;
+  min-height: 120px;
+}
+
+.c-header.c-header--small .c-header__headers {
   top: 0px;
+}
+
+.c-header.c-header--small .c-header__sub-heading {
+  display: none;
+}
+
+.c-header.c-header--small .c-header__buttons {
+  display: none;
+}
+
+.c-header.c-header--small .c-header__heading {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.c-header.c-header--small .c-header__mask {
+  background-color: #187c8c;
+}
+
+@media screen and (max-width: 768px) {
+  .c-header.c-header--small .c-header__title-wrapper {
+    min-height: 80px;
+  }
+}
+
+.c-hamburger {
+  position: absolute;
+  top: 0;
   left: 100%;
+  min-width: 300px;
+  display: block;
+}
+
+.c-hamburger .c-hamburger__wrapper {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.c-hamburger .c-hamburger__link {
+  color: black;
+  text-decoration: none;
+  font-size: 1.33rem;
 }
 
 #hamburger-menu {
@@ -444,6 +560,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-width: 300px;
 }
 
 #hamburger-menu #hamburger-close {
@@ -4032,7 +4149,7 @@ button {
 
 #content {
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;

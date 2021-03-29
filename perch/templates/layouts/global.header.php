@@ -30,25 +30,13 @@
 </head>
 
 <body>
-	<header>
-		<!-- <div class="restrict">
-			<p class="logo"><a href="/"><?php //perch_content('Logo'); ?></a></p>
-			<nav class="navigation">
-				<?php
-				// perch_pages_navigation(array(
-				// 	'template' => array('topNavMain.html', 'topNavSub.html')
-				// ));
-				?>
-				<div class="hamburgerWrapper">
-					<button class="hamburgerButton">
-						<i class="fas fa-bars"></i>
-					</button>
-					<?php
-					// perch_pages_navigation(array(
-					// 	'template' => array('hamburgerMain.html', 'hamburgerSub.html')
-					//))
-					?>
-				</div>
-			</nav>
-		</div> -->
-	</header>
+	<div class="c-hamburger">
+		<div class="c-hamburger__wrapper">
+			<a href="/" class="c-hamburger__link">Home</a>
+			<a href="/about" class="c-hamburger__link">About</a>
+			<a href="/audio-library/" class="c-hamburger__link">Audio Library</a>
+			<a href="/news" class="c-hamburger__link">News</a>
+			<a href="/whats-on" class="c-hamburger__link">What's On</a>
+			<a href="/contact" class="c-hamburger__link">Contact</a>
+		</div>
+	</div>
