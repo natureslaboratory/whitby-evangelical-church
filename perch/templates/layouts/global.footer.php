@@ -1,45 +1,40 @@
-	<footer>
-	    <div class="restrict">
-		    <div>
-			    
-		    </div>
-			<div>
-
-			</div>
-		    <div>
-
-		    </div>
-		    <div>
-
-		    </div>
-		    <div>
-
-		    </div>
-			<p class="copyright">&copy; 2021</p>
-	    </div>
-    </footer>
-
-	<script src="https://kit.fontawesome.com/69f24bba74.js" crossorigin="anonymous" defer></script>
-	<script src="/assets/js/bundle.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	
-	<!-- Matomo -->
-	<script type="text/javascript">
-	  var _paq = window._paq = window._paq || [];
-	  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-	  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-	  _paq.push(["setCookieDomain", "*.iprg.info"]);
-	  _paq.push(['trackPageView']);
-	  _paq.push(['enableLinkTracking']);
-	  (function() {
-	    var u="//analytics.natureslaboratory.co.uk/";
-	    _paq.push(['setTrackerUrl', u+'matomo.php']);
-	    _paq.push(['setSiteId', '2']);
-	    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-	    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-	  })();
-	</script>
-	<!-- End Matomo Code -->
+<footer id="footer">
+	<div class="inner-wrapper">
+		<section>
+			<h4>Quick Links</h4>
+			<ul>
+				<li><a href="./home.html">Home</a></li>
+				<li><a href="./about.html">About Us</a></li>
+				<li><a href="./audio-library.html">Listen Online</a></li>
+				<li><a href="./whats-on.html">What's On</a></li>
+				<li><a href="./calendar.html">Calendar</a></li>
+				<li><a href="./news.html">News</a></li>
+				<li><a href="./contact.html">Contact</a></li>
+			</ul>
+		</section>
+		<section>
+			<h4>Contact</h4>
+			<ul>
+				<li>
+					01947 820772
+				</li>
+				<li>
+					12 Skinner Street, <br />
+					Whitby, <br />
+					North Yorkshire, <br />
+					YO21 3AJ
+				</li>
+			</ul>
+		</section>
+		<section id="footer-map">
+			<iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2317.6272178820377!2d-0.6196864835783704!3d54.487158796347494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487f177000e11b7d%3A0xe007f5506cde65a6!2sWhitby%20Evangelical%20Church!5e0!3m2!1sen!2suk!4v1584984881539!5m2!1sen!2suk"></iframe>
+		</section>
+	</div>
+	<div class="inner-wrapper" id="bottom-bar">
+		<p>&copy; Whitby Evangelical Church 2020</p>
+	</div>
+	</div>
+</footer>
 <?php PerchUtil::output_debug(); ?>
 </body>
 

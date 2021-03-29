@@ -23,7 +23,9 @@
                 <div class="c-header__title-wrapper">
                     <div class="c-header__headers">
                         <h1 class="c-header__heading"><perch:content id="heading" label="Header" type="text"></h1>
-                        <h4 class="c-header__sub-heading"><perch:content id="sub_heading" label="Sub-Header" type="text"></h4>
+                        <perch:if exists="sub_heading">
+                            <h4 class="c-header__sub-heading"><perch:content id="sub_heading" label="Sub-Header" type="text"></h4>
+                        </perch:if>
                         <div class="c-header__buttons">
                             <a class="c-header__button c-header__button--primary" href="/audio-library/">
                                 Listen Online
@@ -57,5 +59,11 @@
                     content.style.overflowY = "auto";
                 }
             })
+
+            const links = document.getElementsByClassName("c-header__link");
+            for (let i = 0; i < links.length; i++) {
+                const link = links[i];
+                
+            }
         </script>
 </header>

@@ -1,40 +1,34 @@
 
 <perch:blocks>
-
-    <perch:block type="text" label="Text">
-        <div class="c-text-block restrict narrow">
-            <perch:content type="textarea" label="Text" id="text" editor="redactor" html>
-        </div>
-    </perch:block>
-
-    <perch:block type="text-with-image" label="Text With Image">
-        <div class="c-text-image restrict">
-            <div class="c-text-image__text-container l-flow">
-                <perch:content class="c-text-image__text" id="text" label="Text" type="textarea" editor="redactor" html>
-            </div>
-            <img src="<perch:content id="image" label="Image" type="image" height="600" width="600" crop>" class="c-text-image__image">
-        </div>
-    </perch:block>
-
-
-
     <perch:block type="cards" label="Cards">
         <perch:repeater label="Cards" type="cards">
-            <perch:before><div id="home-body-content" class="restrict"></perch:before>
-                <div class="home-card <perch:every count="2">right<perch:else>left</perch:every> show">
-                    <div class="home-card-text-wrapper">
-                        <div class="home-card-text">
-                            <h4><perch:content type="text" id="title" label="title"></h4>
-                            
-                            <perch:content type="textarea" label="Content" id="content">
-                            
-                            <a href="<perch:content id="link" label="Link" type="text">"><button>Find out more</button></a>
-                        </div>
+            <perch:before><div id="home-body-content" class="restrict l-content-section c-cards"></perch:before>
+                <div class="home-card c-card c-card--<perch:every count="2">right<perch:else>left</perch:every>">
+                    <div class="home-card-text-wrapper c-card__text-wrapper">
+                        <h4 class="c-card__title"><perch:content type="text" id="title" label="title"></h4>
+                        
+                        <perch:content type="textarea" label="Content" id="content">
+                        
+                        <a class="c-card__button" href="<perch:content id="link" label="Link" type="text">"><button>Find out more</button></a>
                     </div>
                     <img src="<perch:content id="cardImage" type="image" width="300" height="300" label="Image">" alt="People listening to talk" id="what-img"
-                        className="outer-img" />
+                        class="c-card__image" />
                 </div>
             <perch:after></div></perch:after>
         </perch:repeater>
     </perch:block>
+
+    <perch:block type="verse" label="Feature Verse">
+        <div class="l-centered l-content-section l-content-section--shadow c-feature-verse">
+            <p class="c-feature-verse__verse">
+                "<perch:content type="text" label="Verse" id="verse">"
+            </p>
+            <p class="c-feature-verse__reference">
+                <perch:content type="text" label="Reference" id="reference" class="c-feature-verse__reference">
+            </p>
+        </div>
+    </perch:block>
+
+    <perch:template path="content/common_blocks.html">
+
 </perch:blocks>

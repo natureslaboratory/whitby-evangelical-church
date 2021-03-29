@@ -1,0 +1,128 @@
+<perch:blocks>
+    <perch:template path="/content/common_blocks.html">
+
+    <perch:block type="leaders" label="Leaders">
+        <div class="l-content-section l-centered c-leaders l-restrict">
+            <h2 class="c-leaders__title">Our Leaders</h2>
+            <perch:repeater label="Leaders" id="leader-repeater">
+                <perch:before><div class="c-leaders__wrapper"></perch:before>
+                    <div class="c-leaders__leader">
+                        <img src="<perch:content id="leader_image" type="image" height="200" width="200" label="Image" crop>" alt="<perch:content id="name">" class="c-leaders__image">
+                        <div class="c-leaders__information">
+                            <h2 class="c-leaders__name"><perch:content type="text" label="Name" id="name"></h2>
+                            <p class="c-leaders__role"><perch:content id="role" type="select" label="Position" options="Pastor, Elder, Deacon"></p>
+                        </div>
+                    </div>
+                <perch:after></div></perch:after>
+            </perch:repeater>
+        </div>
+    </perch:block>
+
+    <perch:block type="history" label="History">
+    <div class="l-content-section l-content-section--bg-light-grey">
+        <div class="l-restrict c-history">
+            <h2 class="c-history__title">Our History</h2>
+            <div class="c-history__content">
+                <div class="c-history__timeline">
+                    <div class="c-history__timeline-entry">
+                        <div class="c-history__circle"></div>
+                        <h5 class="c-history__timeline-entry-date">1973</h5>
+                        <p class="c-history__timeline-entry-label">The church is founded, Peter Brumby becomes pastor</p>
+                    </div>
+                    <div class="c-history__timeline-entry">
+                        <div class="c-history__circle"></div>
+                        <h5 class="c-history__timeline-entry-date">1978</h5>
+                        <p class="c-history__timeline-entry-label">The church begins meeting at Skinner Street</p>
+                    </div>
+                    <div class="c-history__timeline-entry">
+                        <div class="c-history__circle"></div>
+                        <h5 class="c-history__timeline-entry-date">1993</h5>
+                        <p class="c-history__timeline-entry-label">John Winter becomes pastor</p>
+                    </div>
+                    <div class="c-history__timeline-entry">
+                        <div class="c-history__circle"></div>
+                        <h5 class="c-history__timeline-entry-date">2004</h5>
+                        <p class="c-history__timeline-entry-label">David Magowan becomes pastor</p>
+                    </div>
+                    <div class="c-history__timeline-entry">
+                        <div class="c-history__circle"></div>
+                        <h5 class="c-history__timeline-entry-date">2014</h5>
+                        <p class="c-history__timeline-entry-label">Peter Robinson becomes pastor</p>
+                    </div>
+                </div>
+                <div class="c-history__text">
+                    <p>
+                        The church was formed in 1973. The catalyst was the
+                        decision of Rev Peter Brumby to leave Methodism. He had
+                        been serving churches in Grosmont, Littlebeck, Esk Valley,
+                        Briggswath and Sleights, and many of those who were
+                        involved at the beginning of the church had been converted
+                        under Peter's ministry.
+                    </p>
+                    <p>
+                        Whitby Evangelical Fellowship (as the church was then known)
+                        first met in June 1973 and Rev John Tindall conducted the
+                        church's inaugural covenant service on 28th June 1973. The
+                        church initially met at a home in Sleights. Peter Brumby had
+                        gone to Spain to minister at an English-speaking church on
+                        the Costa del Sol, but was called as the church's first
+                        minister in December 1973. From 1974 to 1978 the church met
+                        at Ruswarp village hall, and then at Stakesby School and
+                        Whitby School, before the purchase of the present premises
+                        in Skinner Street. The building in Skinner Street had been
+                        previously a ballroom, a bakery and café, and a builders'
+                        merchant, and required extensive renovation and alteration.
+                        At this time the fellowship became known as Whitby
+                        Evangelical Church.
+                    </p>
+                    <p>
+                        After 17 years service, Peter Brumby resigned the pastorate
+                        to take up a wider ministry in the North of England. He then
+                        served as minister at Newcastle Reformed Evangelical Church.
+                        After a three year vacancy, John Winter was called in 1993 to
+                        be the pastor. He had been involved in a church planting work
+                        for the Fellowship of Independent Evangelical Churches (FIEC)
+                        in Newton Aycliffe, Co Durham. In December 1999, John Winter
+                        resigned the pastorate, and after a further three year vacancy,
+                        David Magowan was called to be the church's pastor. David
+                        moved onto Carey Baptist Church, Reading, in August 2009. In
+                        March 2014 Peter Robinson (Honiton) responded to a call to
+                        the pastorate and became the minister of the church.
+                    </p>
+                    <p>
+                        Since 1973, the church has seen a steady growth in attendance
+                        and membership. The normal morning congregation of around 80-100
+                        is often swelled with holidaying visitors, particularly during the
+                        summer months. There are various activities in the church calendar
+                        to cater for distinctive groups within the church family. These
+                        include Sunday School, 6-10 Club for Primary aged children, SAS
+                        for teenagers, Mums and Tots, Ladies Meeting, Midweek Bible Study,
+                        etc.
+                    </p>
+                </div>
+            </div>
+            <p class="c-history__verse">
+                May the favour of the Lord our God rest upon us; establish the work of
+                our hands for us - yes, establish the work of our hands (Psalm 90:17)
+            </p>
+        </div>
+    </div>
+    </perch:block>
+
+    <perch:block type="beliefs" label="Beliefs">
+        <div class="l-content-section">
+            <div class="c-beliefs l-restrict">
+                <h2 class="c-beliefs__title">Our Beliefs</h2>
+                <perch:repeater label="Belief Blocks" id="belief_blocks">
+                    <perch:before><div class="c-beliefs__wrapper"></perch:before>
+                        <div class="c-beliefs__belief">
+                            <h3 class="c-beliefs__belief-title"><perch:content id="title" type="text" label="Title"></h3>
+                            <p class="c-beliefs__belief-content"><perch:content type="textarea" label="Content" id="content"></p>
+                        </div>
+                    <perch:after></div></perch:after>
+                </perch:repeater>
+            </div>
+        </div>
+    </perch:block>
+
+</perch:blocks>

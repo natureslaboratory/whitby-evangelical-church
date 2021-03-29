@@ -31,6 +31,8 @@ $size-700: 2.36rem;
 $size-800: 3.15rem;
 $size-900: 4.2rem;
 
+$mobile-width: 520px;
+
 
 
 body {
@@ -71,6 +73,7 @@ h1 {
 
 h2 {
     font-size: $size-600;
+    font-weight: $semibold;
 }
 
 h3 {
@@ -99,7 +102,7 @@ blockquote {
 }
 
 p, li {
-    max-width: 60ch;
+    max-width: $mobile-width;
 }
 
 h1 {
@@ -165,6 +168,8 @@ h2, h3 {
 	max-width: 1280px;
 	display: block;
 	padding: 0 1rem;
+    width: 100%;
+    margin: 0 auto;
 
     &.narrow {
         max-width: 40em;
@@ -175,29 +180,98 @@ h2, h3 {
     margin-top: 1em;
 }
 
+.l-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.l-content-section {
+    margin-bottom: 3rem;
+    width: 100%;
+
+    &:first-child {
+        margin-top: 3rem;
+    }
+
+    &.l-content-section--shadow {
+        box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.068);
+    }
+
+    &.l-content-section--bg-light-grey {
+        background-color: rgb(248, 248, 248);
+    }
+
+    &.l-content-section--no-top-margin {
+        margin-top: 0;
+    }
+}
+
 
 .c-text-image {
     display: flex;
-    gap: 20px;
-    max-width: 60em;
+    gap: 3rem;
     flex-direction: row-reverse;
-    .c-text-image__text {
-
+    text-align: left;
+    justify-content: space-between;
+    .c-text-image__text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .c-text-image__image {
-        height: 100%;
-        max-height: 300px;
+        width: 100%;
+        // max-width: 517.5px;
+        height: auto;
         border-radius: $border-radius;
     }
 
+    @media screen and (max-width: 950px) {
+        flex-direction: column;
+        max-width: $mobile-width;
+
+        .c-text-image__text-container {
+            justify-self: center;
+        }
+
+        .c-text-image__image {
+            justify-self: center;
+        }
+    }
+
+    &.c-text-image--landscape-image {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .c-text-image__text-container {
+            align-items: flex-start;
+        }
+
+        .c-text-image__image {
+            max-height: 340px;
+            width: auto;
+            justify-self: right;
+        }
+
+        @media screen and (max-width: 950px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+
+            .c-text-image__text-container {
+                justify-self: center;
+            }
+
+            .c-text-image__image {
+                justify-self: center;
+            }
+        }
+    }
 }
 
 .c-content {
     display: flex;
-    gap: 60px;
     flex-direction: column;
-    margin: 2rem auto;
-    max-width: 1300px;
     width: 100%;
     align-items: center;
     position: relative;
@@ -226,6 +300,158 @@ h2, h3 {
             background-color: white;
             color: map-get($colors, primary)
         }
+    }
+}
+
+.c-leaders {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .c-leaders__title {
+        align-self: flex-start;
+    }
+
+    .c-leaders__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .c-leaders__leader {
+        display: flex;
+        gap: 20px;
+        border-left: 2px solid #cecece;
+        padding: 15px 30px;
+    }
+    
+    .c-leaders__information {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .c-leaders__name {
+        font-weight: $regular;
+        font-size: 1.4rem
+    }
+    
+    .c-leaders__image {
+        height: 100px;
+        border-radius: 50px;
+    }
+
+    @media screen and (max-width: 950px) {
+        max-width: $mobile-width;
+    }
+}
+
+.c-history {
+    p {
+        max-width: none;
+    }
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .c-history__content {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 40px;
+    }
+
+    .c-history__timeline {
+        border-left: 4px solid map-get($colors, primary);
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .c-history__timeline-entry {
+        display: grid;
+        grid-template-columns: 15px auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "circle date"
+                             ". label";
+        align-items: center;
+    }
+
+    .c-history__circle {
+        height: 15px;
+        width: 15px;
+        position: relative;
+        left: -19px;
+        border-radius: 50px;
+        background-color: white;
+        border: 3px solid map-get($colors, primary);
+        grid-area: circle;
+    }
+
+    .c-history__timeline-entry-date {
+        grid-area: date;
+        font-weight: $regular;
+        font-size: 1.3rem;
+    }
+
+    .c-history__timeline-entry-label {
+        grid-area: label;
+        max-width: 25ch;
+    }
+
+    .c-history__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .c-history__verse {
+        text-align: center;
+        max-width: 80ch;
+        align-self: center;
+        padding: 20px;
+        font-weight: $semibold;
+    }
+
+    @media screen and (max-width: 950px) {
+        max-width: $mobile-width;
+        .c-history__content {
+            grid-template-columns: auto;
+        }
+    }
+}
+
+.c-beliefs {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: auto;
+
+    .c-beliefs__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+        gap: 40px;
+
+        @media screen and (max-width: 600px) {
+            grid-template-columns: auto;
+        }
+    }
+
+    .c-beliefs__belief {
+        border-left: 4px solid map-get($colors, primary);
+        padding-left: 20px;
+    }
+
+    .c-beliefs__belief-title {
+        font-weight: $semibold;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    @media screen and (max-width: 950px) {
+        max-width: $mobile-width;
     }
 }
 
@@ -477,7 +703,7 @@ body {
         }
 
         .c-header__sub-heading {
-            display: none;
+            font-size: 1.4rem;
         }
 
         .c-header__buttons {
@@ -523,87 +749,41 @@ body {
     }
 }
 
-
-#hamburger-menu {
+.c-feature-verse {
     display: flex;
-    position: fixed;
-    top: 0px;
-    left: 100%;
-    width: 250px;
-    padding: 20px;
+    align-items: center;
     justify-content: center;
-    min-width: 300px;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 3rem 0;
+    background-color: white;
 
-    #hamburger-close {
-        color: #1a8a9b;
-        position: absolute;
-        top: 13px;
-        right: 28px;
-        font-size: 20px;
-        cursor: pointer;
+    &:first-child {
+        margin-top: 0;
+    }
+    
+    .c-feature-verse__verse {
+        font-size: 1.6rem;
+        max-width: 40ch;
+        text-align: center;
     }
 
-    ul {
-        display: grid;
-        grid-gap: 15px;
-        top: 80px;
-        position: relative;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        border-top: 2px solid #1a8a9b;
-        border-bottom: 2px solid #1a8a9b;
-
-        li {
-            list-style-type: none;
-            transition: 150ms;
-
-            &.active {
-                a {
-                    p {
-                        font-weight: $semibold;
-                    }
-                }
-            }
-
-            a {
-                display: grid;
-                grid-template-columns: 25px auto;
-                grid-gap: 15px;
-                align-items: center;
-                padding: 8px 5px;
-
-                p,
-                i {
-                    font-size: 22px;
-                }
-
-                text-decoration: none;
-                color: #1a8a9b;
-                transition: 150ms;
-            }
-        }
+    .c-feature-verse__reference {
+        font-style: italic;
     }
 }
 
-#hamburger-menu.show {
-    transform: translateX(0px);
-    pointer-events: auto;
-
-    @media only screen and (min-width: 681px) {
-        display: none;
-    }
-}
-
-#main-bg {
+.c-bg-svg {
     position: absolute;
     z-index: -100;
     width: 100%;
     bottom: 0;
-    height: 500px;
 
-    img {
+    .c-bg-svg__svg {
         width: 100%;
         margin-bottom: -10px;
+        max-width: none;
     }
 
     @media screen and (min-width: 1400px) {
@@ -623,276 +803,47 @@ body {
     }
 }
 
-#main-wrapper-new {
+.c-cards {
+    display: grid;
+    gap: 40px;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-
-    #bg-color {
-        width: 100%;
-        position: absolute;
-        bottom: 0px;
-        z-index: -110;
-        background: map-get($colors, primary);
-    }
-
-    #main-content {
-        max-width: 1300px;
-        margin: 50px 30px;
-        border-radius: $border-radius;
-        position: relative;
-
-        @media screen and (max-width: 841px) {
-            margin: 10px 30px;
-        }
-
-        #bg-svg {
-            position: absolute;
-            width: 100%;
-            left: 0px;
-            top: 600px;
-            z-index: 0;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-            }
-        }
-
-        #home-card-intro {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            opacity: 0;
-            top: -20px;
-            transition-delay: 1s;
-            transition: 800ms ease;
-
-            &.show {
-                opacity: 1;
-                top: 0px;
-            }
-
-            #home-intro-content {
-                z-index: 1;
-                display: grid;
-                grid-template-rows: auto auto 350px auto auto auto;
-                grid-template-columns: auto;
-                grid-template-areas:
-                    "title"
-                    "p1"
-                    "image"
-                    "p2"
-                    "p3"
-                    "button";
-                background: white;
-                row-gap: 14px;
-
-                @media screen and (min-width: 841px) {
-                    grid-template-rows: auto auto auto auto auto auto;
-                    grid-template-columns: auto 400px;
-                    grid-template-areas:
-                        "title image"
-                        "p1 image"
-                        "p2 image"
-                        "p3 image"
-                        ". image"
-                        "button image";
-                    grid-column-gap: 20px;
-                    background: none;
-
-                    #church-img-wrapper {
-                        #church-img {
-                            border-radius: $border-radius;
-                        }
-                    }
-                }
-
-                @media screen and (min-width: 1200px) {
-                    grid-template-rows: auto auto auto auto auto auto auto;
-                    grid-template-columns: auto 500px;
-                    grid-template-areas:
-                        ". image"
-                        "title image"
-                        "p1 image"
-                        "p2 image"
-                        "p3 image"
-                        "button image"
-                        ". image";
-                    grid-column-gap: 20px;
-                }
-
-                #home-intro-card-title {
-                    grid-area: title;
-                    z-index: 1;
-                    font-weight: $regular;
-                    font-size: 23px;
-                    padding-top: 20px;
-                }
-
-                #p1 {
-                    grid-area: p1;
-                    z-index: 1;
-                }
-
-                #p2 {
-                    grid-area: p2;
-                    z-index: 1;
-                }
-
-                #p3 {
-                    grid-area: p3;
-                    z-index: 1;
-                }
-
-                #church-img-wrapper {
-                    grid-area: image;
-
-                    #church-img {
-                        background-position: center;
-                        background-size: cover;
-                        background-position: 100% 85%;
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-
-                p {
-                    font-size: 15px;
-                    line-height: 25px;
-                }
-
-                #home-button-intro-div {
-                    grid-area: button;
-                    z-index: 1;
-                    padding-bottom: 20px;
-
-                    button {
-                        background: map-get($colors, primary);
-                        color: white;
-                        padding: 12px 0;
-                        width: 140px;
-                        border: none;
-                        border-radius: 50px;
-                    }
-                }
-
-                .home-card-grid-item {
-                    padding: 10px 0;
-                }
-            }
-        }
-
+    @media screen and (max-width: 950px) {
+        max-width: $mobile-width;
     }
 }
-#home-body-content {
+
+.c-card {
     display: flex;
     gap: 40px;
-    flex-direction: column;
-    align-self: stretch;
-    .home-card {
-        // width: 100%;
-        // display: grid;
-        // grid-template-columns: 100%;
-        // grid-template-rows: 1fr 1fr;
-        // grid-template-areas:
-        //     "image"
-        //     "text";
-        // border-radius: 22px;
-        // background: white;
-        // margin-top: 40px;
-        // height: 500px;
-        // box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075);
-        // opacity: 0;
-        // position: relative;
-        // transform: translateY(-5px);
-        // transition: 800ms ease;
+    max-width: 1280px;
+    width: 100%;
+    justify-content: flex-end;
 
+    &.c-card--right {
+        flex-direction: row-reverse;
+    }
+
+    .c-card__image {
+        border-radius: $border-radius;
+        width: auto;
+        height: 230px;
+    }
+
+    .c-card__text-wrapper {
         display: flex;
-        gap: 40px;
-        box-sizing: border-box;
-        
-        &.right {
-            flex-direction: row-reverse;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        border-radius: $border-radius;
+        box-shadow: 5px 3px 25px rgba(0, 0, 0, 0.075);
+        padding: 30px;
+        max-width: 600px;
+        background: white;
+    }
 
-            .home-card-text-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: flex-start;
-            }
-        }
-
-        .home-card-text-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .home-card-text {
-            box-shadow: 5px 11px 25px rgba(0, 0, 0, 0.075);
-            background: white;
-            border-radius:$border-radius;
-            min-width: 400px;
-            max-width: 600px;
-            height: 240px;
-        }
-
-        img {
-            box-shadow: 5px 11px 25px rgba(0, 0, 0, 0.075);
-            border-radius:$border-radius;
-        }
-
-        .home-card-text {
-            padding: 10px 30px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-
-            h4 {
-                font-weight: $regular;
-                font-size: 23px;
-                margin-bottom: 10px;
-            }
-
-            button {
-                background: map-get($colors, primary);
-                border: none;
-                color: white;
-                padding: 12px 0;
-                width: 140px;
-                border-radius: 50px;
-                font-size: 14px;
-                margin-top: 15px;
-                cursor: pointer;
-                transition: 150ms;
-
-                &:hover {
-                    background: map-get($colors, secondary);
-                }
-            }
-        }
-
-        img {
-            max-height: 240px;
-            // grid-area: image;
-            // width: 100%;
-            // height: 100%;
-            // object-fit: cover;
-            // border-top-right-radius:$border-radius;
-            // border-top-left-radius:$border-radius;
-        }
-
-        @media screen and (max-width: 400px) {
-            height: 550px;
-
-            .home-card-text {
-                padding: 8px 15px;
-            }
-        }
+    .c-card__button {
+        margin-top: 10px;
     }
 }
 
