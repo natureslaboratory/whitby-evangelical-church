@@ -1,71 +1,44 @@
-<header class="<perch:content id="headerClass" label="Header Type" type="select" options="full, small" >">
-    <div id="bg-img" style="background-image: url(<perch:content id="headerImage" type="image" label="Header Image" width="1400" height="500">);"></div>
-    <div id="bg-mask"></div>
-        <div id="grid">
-            <div id="top-bar-wrapper">
-                <div id="top-bar">
-                    <div class="logo normal">
-                        <a href="/home">Whitby Evangelical Church</a>
+<header class="c-header c-header--<perch:content id="header_size" label="Size" type="select" options="small, large">"
+    style="background-image: url(<perch:content type="image" id="bg_img" width="1400" height="600"
+        label="Background Image">)"
+        >
+        <div class="c-header__mask">
+            <div class="l-restrict c-header__content-wrapper">
+                <div class="c-header__logo-nav-wrapper">
+                    <a href="/" class="c-header__logo">Whitby Evangelical Church</a>
+                    <div class="c-header__nav">
+                        <a href="/" class="c-header__link">Home</a>
+                        <a href="/about" class="c-header__link">About</a>
+                        <a href="/audio-library/" class="c-header__link">Audio Library</a>
+                        <a href="/news" class="c-header__link">News</a>
+                        <a href="/whats-on" class="c-header__link">What's On</a>
+                        <a href="/contact" class="c-header__link">Contact</a>
                     </div>
-                    <div class="logo small">
-                        <a href="/">WEC</a>
-                    </div>
-                    <nav>
-                        <a href="/about">Who We Are</a>
-                        <a href="/audio-library">Listen Online</a>
-                        <a href="/whats-on">What's On</a>
-                        <a href="/news">News</a>
-                        <a href="/contact">Contact</a>
-                        <div id="hamburger" onclick="toggleHamburger()">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                </div>
+                <div class="c-header__title-wrapper">
+                    <div class="c-header__headers">
+                        <h1 class="c-header__heading">Welcome</h1>
+                        <h4 class="c-header__sub-heading">To Whitby Evanglical Church</h4>
+                        <div class="c-header__buttons">
+                            <a class="c-header__button c-header__button--primary" href="/audio-library/">
+                                Listen Online
+                            </a>
+                            <a class="c-header__button c-header__button--secondary" href="/about">
+                                About Us
+                            </a>
                         </div>
-                    </nav>
-                </div>
-                <div id="headlines">
-                    <h1>Welcome</h1>
-                    <h3>To Whitby Evangelical Church</h3>
-                    <div class="c-link-buttons">
-                        <a href="/audio-library" class="c-link-buttons__button">Listen Online</a>
-                        <a href="/about" class="c-link-buttons__button">About Us</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="title">
-            <div id="svg-div">
-                <i className={props.icon}></i>
-            </div>
-            <h1>About Us</h1>
-        </div>
-        <div id="hamburger-menu">
-            <div>
-                <div id="hamburger-close" onclick="toggleHamburger()">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <ul>
-                    <li><a href="./home.html"><i class="fas fa-home"></i>
-                            <p>Home</p>
-                        </a></li>
-                    <li><a href="./about.html"><i class="fas fa-bible"></i>
-                            <p>About Us</p>
-                        </a></li>
-                    <li><a href="./audio-library.html"><i class="fas fa-headphones-alt"></i>
-                            <p>Listen Online</p>
-                        </a></li>
-                    <li><a href="./whats-on.html"><i class="fas fa-calendar-alt"></i>
-                            <p>What's On</p>
-                        </a></li>
-                    <li><a href="./news.html"><i class="fas fa-newspaper"></i>
-                            <p>News</p>
-                        </a></li>
-                    <li><a href="./contact.html"><i class="fas fa-envelope"></i>
-                            <p>Contact</p>
-                        </a></li>
-                </ul>
+        <div class="c-hamburger">
+            <div class="c-hamburger__wrapper">
+                <a href="/" class="c-hamburger__link">Home</a>
+                <a href="/about" class="c-hamburger__link">About</a>
+                <a href="/audio-library/" class="c-hamburger__link">Audio Library</a>
+                <a href="/news" class="c-hamburger__link">News</a>
+                <a href="/whats-on" class="c-hamburger__link">What's On</a>
+                <a href="/contact" class="c-hamburger__link">Contact</a>
             </div>
         </div>
 </header>

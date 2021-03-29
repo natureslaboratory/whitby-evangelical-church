@@ -10,6 +10,7 @@ perch_layout('global.header');
     <div id="content" style="position: relative;">
         <div>
             <?php
+
             perch_content_create("Header", [
                 "template" => "header.html"
             ]);
@@ -27,6 +28,7 @@ perch_layout('global.header');
                 "template" => "home_content.html"
             ]);
             perch_content("Main Content");
+            
             ?>
             <!-- <div id="main-wrapper-new" className="page-content">
                         <div id="main-bg">
