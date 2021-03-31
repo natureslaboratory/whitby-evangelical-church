@@ -324,6 +324,7 @@ h3 {
   width: auto;
   margin-bottom: 10px;
   text-decoration: underline;
+  border: none;
 }
 
 .c-content {
