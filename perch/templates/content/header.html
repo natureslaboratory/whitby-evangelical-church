@@ -8,11 +8,11 @@
                     <a href="/" class="c-header__logo">Whitby Evangelical Church</a>
                     <div class="c-header__nav">
                         <a href="/" class="c-header__link">Home</a>
-                        <a href="/about" class="c-header__link">About</a>
+                        <a href="/about/" class="c-header__link">About</a>
                         <a href="/audio-library/" class="c-header__link">Audio Library</a>
-                        <a href="/news" class="c-header__link">News</a>
-                        <a href="/whats-on" class="c-header__link">What's On</a>
-                        <a href="/contact" class="c-header__link">Contact</a>
+                        <a href="/news/" class="c-header__link">News</a>
+                        <a href="/whats-on/" class="c-header__link">What's On</a>
+                        <a href="/contact/" class="c-header__link">Contact</a>
                         <div class="c-header__hamburger-button">
                             <div></div>
                             <div></div>
@@ -22,7 +22,13 @@
                 </div>
                 <div class="c-header__title-wrapper">
                     <div class="c-header__headers">
-                        <h1 class="c-header__heading"><perch:content id="heading" label="Header" type="text"></h1>
+                        <h1 class="c-header__heading">
+                            <perch:if exists="title">
+                                <perch:content id="title">
+                            <perch:else>
+                                <perch:content id="heading" label="Header" type="text">
+                            </perch:if>
+                        </h1>
                         <perch:if exists="sub_heading">
                             <h4 class="c-header__sub-heading"><perch:content id="sub_heading" label="Sub-Header" type="text"></h4>
                         </perch:if>
@@ -40,17 +46,22 @@
         </div>
         <script>
             const hamburgerButton = document.getElementsByClassName("c-header__hamburger-button")[0];
-            const hamburgerMenuRect = document.getElementsByClassName("c-hamburger")[0].getBoundingClientRect();
+            const hamburgerMenu = document.getElementsByClassName("c-hamburger")[0];
             const content = document.getElementById("content");
             hamburgerButton.addEventListener("click", () => {
-                console.log(document.body.style.transform)
                 if (document.body.style.transform) {
                     document.body.style.transform = "";
                     document.body.style.overflowX = "hidden";
                     document.body.style.overflowY = "scroll";
                     content.style.overflowX = "hidden";
                     content.style.overflowY = "auto";
+                    setTimeout(() => {
+                        hamburgerMenu.style.display = "none";
+                    }, 300)
                 } else {
+                    hamburgerMenu.style.display = "block";
+                    console.log(hamburgerMenu.style.display)
+                    const hamburgerMenuRect = hamburgerMenu.getBoundingClientRect();
                     const hamburgerWidth = hamburgerMenuRect.right - hamburgerMenuRect.left;
                     document.body.style.transform = `translateX(-${hamburgerWidth}px)`;
                     document.body.style.overflowX = "auto";

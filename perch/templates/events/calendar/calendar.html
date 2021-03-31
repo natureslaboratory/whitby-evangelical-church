@@ -1,0 +1,19 @@
+<div class="c-calendar l-content-section l-content-section--centered">
+    <h2 class="c-calendar__month"><perch:events id="selected_month" format="%B %Y" /></h2>
+
+    <ul class="c-calendar__nav">
+        <li><a class="c-calendar__nav_prev" href="?d=<perch:events id="prev_month" format="Y-m" />"> <perch:events id="prev_month" format="%b %Y" /></a></li>
+        <li><a class="c-calendar__nav_current" href="?d=<perch:events id="current_month" format="Y-m" />">*</a></li>
+        <li><a class="c-calendar__nav_next" href="?d=<perch:events id="next_month" format="Y-m" />"><perch:events id="next_month" format="%b %Y" /> </a></li>
+    </ul>
+
+    <table class="c-calendar__calendar">
+        <thead class="c-calendar__head">
+            <perch:events id="header" encode="false" />
+        </thead>
+        <tbody class="c-calendar__body">
+            <perch:events id="body" encode="false" />
+        </tbody>
+    </table>
+</div>
+

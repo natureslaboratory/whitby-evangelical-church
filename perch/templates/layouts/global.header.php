@@ -6,7 +6,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<?php
 	if (perch_get('s')) {
-		perch_blog_post_meta(perch_get('s'));
+		// perch_blog_post_meta(perch_get('s'));
 	} else {
 	?>
 		<title><?php perch_pages_title(); ?></title>
@@ -23,6 +23,24 @@
 
 	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ropa+Sans&display=swap" media="print" onload="this.media='all'" />
+	<?php
+		function urlContainsString($url, $string) {
+			if (strpos($url, $string)) {
+				return true;
+			}
+			return false;
+		}
+
+		if (urlContainsString($_SERVER["REQUEST_URI"], "calendar")) {
+			echo '
+				<script src="/assets/js/jquery-3.6.0.min.js"></script>
+				<link href="/assets/css/main.min.css" rel="stylesheet" />
+			';
+		}
+	?>
+
+    <script src='/assets/js/main.min.js'></script>
+
 	<noscript>
 		<link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
 	</noscript>
@@ -40,3 +58,4 @@
 			<a href="/contact" class="c-hamburger__link">Contact</a>
 		</div>
 	</div>
+	<div id="content">

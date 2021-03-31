@@ -1,0 +1,34 @@
+<perch:blocks>
+    <perch:template path="/content/common_blocks.html">
+
+    <perch:block type="contact_form" label="Contact Form">
+			<div class="l-content-section l-content-section--centered">
+				<perch:content type="textarea" id="textarea" label="Text Field" editor="redactor" html />
+				<perch:form id="contact" method="post" app="perch_forms" class="c-contact-form">
+					<div class="c-contact-form__section">
+						<div class="c-contact-form__form-input-section">
+							<label for="name" class="c-contact-form__form-input-label">Name</label>
+							<perch:input class="c-contact-form__form-input" type="text" id="name" required label="Name" placeholder="Your Name" />
+						</div>
+						<div class="c-contact-form__form-input-section">
+							<label for="email" class="c-contact-form__form-input-label">Email</label>
+							<perch:input class="c-contact-form__form-input" type="email" id="email" required label="Email" placeholder="you@company.com" />
+						</div>
+						<div class="c-contact-form__form-input-section">
+							<label for="message" class="c-contact-form__form-input-label">Message</label>
+							<perch:input class="c-contact-form__form-input c-contact-form__form-input--textarea" type="textarea" id="message" required label="Message" placeholder="Message" />
+						</div>
+						<div class="c-contact-form__form-input-section">
+							<perch:input type="submit" id="submit" value="Send" class="c-button c-button--secondary" />
+						</div>
+					</div>
+					<perch:success>
+						<p class="success">
+							<perch:content id="success" type="text" label="Thank you message" />
+						</p>
+					</perch:success>
+				</perch:form>
+			</div>
+	</perch:block>
+
+</perch:blocks>

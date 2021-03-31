@@ -1,0 +1,47 @@
+<perch:blocks>
+    <perch:template path="/content/common_blocks.html">
+
+    <perch:block type="verse-picture" label="Verse Picture Block">
+        <section class="l-content-section l-restrict c-verse-picture" id="what-intro">
+            <div class="c-verse-picture__wrapper">
+                <div id="verse" class="c-verse-picture__verse">
+                    <p id="verse-text" class="c-verse-picture__verse-text">
+                        "For where two or three gather in my      name, there am I with them.”
+                    </p>
+                    <p id="verse-ref" class="c-verse-picture__verse-ref">
+                        Matthew 18:20
+                    </p>
+                    <a href="/whats-on/calendar" class="c-verse-picture__button">
+                        <p id="link">
+                            Calendar
+                        </p>
+                    </a>
+                </div>
+                <div id="picture" class="c-verse-picture__image-wrapper">
+                    <div id="img-mask" class="c-verse-picture__image-mask"></div>
+                    <img src="/perch/resources/photo-1553729784-e91953dec042.jpg" alt="book" class="c-verse-picture__image"/>
+                </div>
+            </div>
+        </section>
+    </perch:block>
+
+    <perch:block type="meetings" label="Meetings">
+        <section class="l-content-section l-restrict c-meetings">
+        <h2 class="c-meetings__title"><perch:content type="text" label="Title" id="title"></h2>
+        <perch:repeater label="Meetings" id="meetings">
+            <perch:before><div class="c-meetings__meeting-list"> </perch:before>
+                <div class="c-meetings__meeting">
+                    <h4 class="c-meetings__meeting-title"><perch:content id="meeting_title" label="Name" type="text"></h4>
+                    <p class="c-meetings__meeting-time">
+                        <perch:content id="day" label="Day" type="select" options="Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday">, 
+                        <perch:content id="time" label="Time" type="time" format="H:i">
+                    </p>
+                    <p class="c-meetings__meeting-description">
+                        <perch:content id="description" label="Description" type="textarea">
+                    </p>
+                </div>
+            <perch:after></div></perch:after>
+        </perch:repeater>
+        </section>
+    </perch:block>
+</perch:blocks>
