@@ -21,6 +21,7 @@ perch_content("Header");
 <div class="c-content">
     <div class="l-content-section l-restrict">
         <div id="yash-embed-sermons" data-url="https://yetanothersermon.host/_/whitbyec/embed_v2/"></div>
+        <script src="https://yetanothersermon.host/js/embed.js" defer data-id="yash-embed-sermons"></script>
     </div>
 </div>
 <?php

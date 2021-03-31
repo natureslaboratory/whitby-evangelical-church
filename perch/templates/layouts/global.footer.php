@@ -40,6 +40,4 @@
 <?php PerchUtil::output_debug(); ?>
 </body>
 <script src="/assets/js/bundle.js?v=<?php echo rand() ?>" type="module"></script>
-<script src="https://yetanothersermon.host/js/embed.js" defer data-id="yash-embed-sermons"></script>
-
 </html>

@@ -20,6 +20,7 @@ perch_content("Header");
 <div class="c-content">
     <div class="l-content-section l-restrict">
         <div class="c-calendar"></div>
+        <script src="/assets/js/calendar.js"></script>
     </div>
 </div>
 <?php

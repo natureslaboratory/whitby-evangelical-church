@@ -33,13 +33,12 @@
 
 		if (urlContainsString($_SERVER["REQUEST_URI"], "calendar")) {
 			echo '
-				<script src="/assets/js/jquery-3.6.0.min.js"></script>
+				<script src="/assets/js/main.min.js"></script>
 				<link href="/assets/css/main.min.css" rel="stylesheet" />
 			';
 		}
 	?>
-
-    <script src='/assets/js/main.min.js'></script>
+	<script src="/assets/js/jquery-3.6.0.min.js"></script>
 
 	<noscript>
 		<link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
