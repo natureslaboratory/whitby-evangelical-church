@@ -725,7 +725,7 @@ body {
 
         @media screen and (max-width: 768px) {
             .c-header__title-wrapper {
-                min-height: 80px;
+                min-height: 100px;
             }
         }
     }
@@ -760,7 +760,7 @@ body {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    padding: 3rem 0;
+    padding: 3rem 1rem;
     background-color: white;
 
     &:first-child {

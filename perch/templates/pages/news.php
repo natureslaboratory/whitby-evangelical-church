@@ -26,7 +26,7 @@ perch_layout('global.header');
 
     ?>
     <div class="c-content">
-        <div class="c-post l-content-section l-content-section--centered">
+        <div class="c-post l-content-section l-content-section--centered l-restrict">
             <?php
             if (perch_get("s")) {
                 perch_blog_post(perch_get("s"));

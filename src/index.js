@@ -14,7 +14,7 @@ const isBaseLink = (href) => {
         return true;
     }
     return false;
-    
+
 }
 
 const navLinks = document.getElementsByClassName("c-header__link");
@@ -26,4 +26,39 @@ for (let i = 0; i < navLinks.length; i++) {
     } else if (window.location.href == link.href && isBaseLink(link.href)) {
         link.style.textDecoration = "underline";
     }
+}
+
+
+const hamburgerButton = document.getElementsByClassName("c-header__hamburger-button")[0];
+const hamburgerMenu = document.getElementsByClassName("c-hamburger")[0];
+const content = document.getElementById("content");
+hamburgerButton.addEventListener("click", () => {
+    if (document.body.style.transform) {
+        document.body.style.transform = "";
+        document.body.style.overflowX = "hidden";
+        document.body.style.overflowY = "auto";
+        document.body.style.position = "relative";
+        content.style.overflowX = "hidden";
+        content.style.overflowY = "auto";
+        setTimeout(() => {
+            hamburgerMenu.style.display = "none";
+        }, 300)
+    } else {
+        hamburgerMenu.style.display = "block";
+        console.log(hamburgerMenu.style.display)
+        const hamburgerMenuRect = hamburgerMenu.getBoundingClientRect();
+        const hamburgerWidth = hamburgerMenuRect.right - hamburgerMenuRect.left;
+        document.body.style.transform = `translateX(-${hamburgerWidth}px)`;
+        document.body.style.overflowX = "auto";
+        document.body.style.overflowY = "hidden";
+        document.body.style.position = "fixed";
+        content.style.overflowX = "auto";
+        content.style.overflowY = "hidden";
+    }
+})
+
+const links = document.getElementsByClassName("c-header__link");
+for (let i = 0; i < links.length; i++) {
+    const link = links[i];
+
 }

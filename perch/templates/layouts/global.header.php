@@ -5,16 +5,20 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<?php
-	if (perch_get('s')) {
-		// perch_blog_post_meta(perch_get('s'));
-	} else {
+	// if (perch_get('s')) {
+	// 	// perch_blog_post_meta(perch_get('s'));
+	// }
 	?>
-		<title><?php perch_pages_title(); ?></title>
-		<?php perch_page_attributes(); ?>
-	<?php
-	}
-	?>
-
+	<title>
+		<?php 
+		if (perch_get("s")) {
+			perch_blog_post_field(perch_get("s"), 'postTitle');
+		} else {
+			perch_pages_title(); 
+		}
+		?>
+	</title>
+	<?php perch_page_attributes(); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
