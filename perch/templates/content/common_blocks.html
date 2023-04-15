@@ -13,7 +13,7 @@
 
 <perch:block type="text-with-image" label="Text With Image">
     <div class="l-content-section l-centered">
-        <div class="c-text-image c-text-image--<perch:content type="select" id="image_type" label="Image Type" options="landscape, portrait, square" >-image l-restrict narrow">
+        <div class="c-text-image c-text-image--<perch:content type="select" id="image_type" label="Image Type" options="landscape, portrait, square" >-image l-restrict <perch:content type="checkbox" id="narrow" label="Narrow" value="narrow" checked="narrow" />">
             <div class="c-text-image__text-container l-flow">
                 <perch:content class="c-text-image__text" id="text" label="Text" type="textarea" editor="redactor" html>
             </div>
