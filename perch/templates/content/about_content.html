@@ -1,19 +1,30 @@
 <perch:blocks>
     <perch:template path="/content/common_blocks.html">
 
-    <perch:block type="leaders" label="Leaders">
+    <perch:block type="team" label="Leaders">
         <div class="l-content-section l-centered c-leaders l-restrict">
-            <h2 class="c-leaders__title">Our Leaders</h2>
-            <perch:repeater label="Leaders" id="leader-repeater">
-                <perch:before><div class="c-leaders__wrapper"></perch:before>
+            <h2 class="c-leaders__title">Our Team</h2>
+            <perch:repeater label="Elders" id="elder-repeater">
+                <perch:before><div class="c-leaders__wrapper"><h3>Elders</h3><div class="c-leaders__grid"></perch:before>
                     <div class="c-leaders__leader">
                         <img src="<perch:content id="leader_image" type="image" height="200" width="200" label="Image" crop>" alt="<perch:content id="name">" class="c-leaders__image">
                         <div class="c-leaders__information">
-                            <h2 class="c-leaders__name"><perch:content type="text" label="Name" id="name"></h2>
-                            <p class="c-leaders__role"><perch:content id="role" type="select" label="Position" options="Pastor, Elder, Deacon"></p>
+                            <h4 class="c-leaders__name"><perch:content type="text" label="Name" id="name"></h4>
+                            <perch:content id="about" type="textarea" label="About" class="c-leaders__about" editor="redactor" html>
                         </div>
                     </div>
-                <perch:after></div></perch:after>
+                <perch:after></div></div></perch:after>
+            </perch:repeater>
+            <perch:repeater label="Deacons" id="deacon-repeater">
+                <perch:before><div class="c-leaders__wrapper"><h3>Deacons</h3><div class="c-leaders__grid"></perch:before>
+                    <div class="c-leaders__leader">
+                        <img src="<perch:content id="leader_image" type="image" height="200" width="200" label="Image" crop>" alt="<perch:content id="name">" class="c-leaders__image">
+                        <div class="c-leaders__information">
+                            <h4 class="c-leaders__name"><perch:content type="text" label="Name" id="name"></h4>
+                            <perch:content id="about" type="textarea" label="About" class="c-leaders__about" editor="redactor" html>
+                        </div>
+                    </div>
+                <perch:after></div></div></perch:after>
             </perch:repeater>
         </div>
     </perch:block>
