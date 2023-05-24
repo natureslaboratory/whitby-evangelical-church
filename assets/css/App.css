@@ -360,6 +360,7 @@ h3 {
   .c-leaders .c-leaders__leader {
     display: flex;
     flex-direction: column;
+    align-items: start;
   }
 }
 
