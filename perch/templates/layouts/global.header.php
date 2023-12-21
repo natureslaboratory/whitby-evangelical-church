@@ -48,27 +48,16 @@
 	<noscript>
 		<link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
 	</noscript>
-	<link rel="stylesheet" type="text/css" href="/assets/css/App.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/App.css?t=1">
 </head>
 
 <body>
-	<div class="c-hamburger">
-		<div class="c-hamburger__cross">
-			<svg width="12.32781mm" height="12.327812mm" viewBox="0 0 12.32781 12.327812" version="1.1" class="c-cross">
-				<defs id="defs2" />
-				<g inkscape:label="Layer 1" id="layer1" transform="translate(-8.837041,-271.65379)" class="c-cross__g">
-					<rect class="c-cross__rect" width="16.394718" height="1.0394346" x="-194.03687" y="206.53433" transform="rotate(-45)" />
-					<rect transform="rotate(-135)" y="-186.35922" x="-215.2514" height="1.0394346" width="16.394718" class="c-cross__rect" />
-				</g>
-			</svg>
-		</div>
-		<div class="c-hamburger__wrapper">
-			<a href="/" class="c-hamburger__link">Home</a>
-			<a href="/about" class="c-hamburger__link">About</a>
-			<a href="/audio-library/" class="c-hamburger__link">Audio Library</a>
-			<a href="/news" class="c-hamburger__link">News</a>
-			<a href="/whats-on" class="c-hamburger__link">What's On</a>
-			<a href="/contact" class="c-hamburger__link">Contact</a>
-		</div>
-	</div>
+	<?php
+
+	perch_pages_navigation(array(
+		'template' => array('hamburgerMain.html', 'topNavSub.html'),
+		'levels' => 1
+	));
+
+	?>
 	<div id="content">

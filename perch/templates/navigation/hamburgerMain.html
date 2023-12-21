@@ -1,18 +1,48 @@
-<perch:before><ul class="hamburger hide"></perch:before>
-    <li 
-        class="<perch:if exists="current_page">selected</perch:if><perch:if exists="ancestor_page">ancestor</perch:if> hamburgerItem"
-        data-children="<perch:if exists="subitems">true<perch:else>false</perch:if>"
-    >
-        <perch:if exists="subitems">
-        <button class="hamburgerLabel hamburgerLink">
-            <i class="fas fa-angle-down linkIcon"></i>
-            <perch:pages id="pageNavText" />
-        </button>
-        <perch:else>
-            <a href="<perch:pages id="pagePath" />" class="hamburgerLink">
+<perch:before>
+    <div class="c-hamburger">
+        <div class="c-hamburger__cross">
+            <svg width="12.32781mm" height="12.327812mm" viewBox="0 0 12.32781 12.327812" version="1.1" class="c-cross">
+                <defs id="defs2"></defs>
+                <g inkscape:label="Layer 1" id="layer1" transform="translate(-8.837041,-271.65379)" class="c-cross__g">
+                    <rect class="c-cross__rect" width="16.394718" height="1.0394346" x="-194.03687" y="206.53433" transform="rotate(-45)"></rect>
+                    <rect transform="rotate(-135)" y="-186.35922" x="-215.2514" height="1.0394346" width="16.394718" class="c-cross__rect"></rect>
+                </g>
+            </svg>
+        </div>
+        <div class="c-hamburger__wrapper">
+</perch:before>
+            <a class="<perch:if exists=" current_page">selected</perch:if>
+                <perch:if exists="ancestor_page">ancestor</perch:if> c-hamburger__link"
+                data-children="<perch:if exists="subitems">true<perch:else>false</perch:if>"
+                href="<perch:pages id=" pagePath" />"
+                >
                 <perch:pages id="pageNavText" />
             </a>
-        </perch:if>
-        <perch:pages id="subitems" encode="false"/>
-    </li>
-    <perch:after></ul></perch:after>
+<perch:after>
+        </div>
+    </div>
+</perch:after>
+
+
+<!-- 
+<div class="c-hamburger" style="display: flex;">
+    <div class="c-hamburger__cross">
+        <svg width="12.32781mm" height="12.327812mm" viewBox="0 0 12.32781 12.327812" version="1.1" class="c-cross">
+            <defs id="defs2"></defs>
+            <g inkscape:label="Layer 1" id="layer1" transform="translate(-8.837041,-271.65379)" class="c-cross__g">
+                <rect class="c-cross__rect" width="16.394718" height="1.0394346" x="-194.03687" y="206.53433"
+                    transform="rotate(-45)"></rect>
+                <rect transform="rotate(-135)" y="-186.35922" x="-215.2514" height="1.0394346" width="16.394718"
+                    class="c-cross__rect"></rect>
+            </g>
+        </svg>
+    </div>
+    <div class="c-hamburger__wrapper">
+        <a href="/" class="c-hamburger__link">Home</a>
+        <a href="/about" class="c-hamburger__link">About</a>
+        <a href="/audio-library/" class="c-hamburger__link">Audio Library</a>
+        <a href="/news" class="c-hamburger__link">News</a>
+        <a href="/whats-on" class="c-hamburger__link">What's On</a>
+        <a href="/contact" class="c-hamburger__link">Contact</a>
+    </div>
+</div> -->

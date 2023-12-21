@@ -944,39 +944,39 @@ body {
         outline: 2px dashed map-get($colors, primary);
     }
 
-    @media screen and (max-width: 768px) {
-        background-image: none !important;
-        height: auto;
-        flex-direction: column;
-        max-width: 300px;
-        margin: 0 auto;
-        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.103);
+    // @media screen and (max-width: 768px) {
+    //     background-image: none !important;
+    //     height: auto;
+    //     flex-direction: column;
+    //     max-width: 300px;
+    //     margin: 0 auto;
+    //     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.103);
 
-        .c-card__title-wrapper {
-            top: 0px;
-            left: 0px;
-        }
+    //     .c-card__title-wrapper {
+    //         top: 0px;
+    //         left: 0px;
+    //     }
 
-        .c-card__image {
-            display: block;
-        }
+    //     .c-card__image {
+    //         display: block;
+    //     }
 
-        .c-card__content {
-            position: relative;
-            clip-path: none;
-        }
+    //     .c-card__content {
+    //         position: relative;
+    //         clip-path: none;
+    //     }
 
-        &:hover {
-            .c-card__content {
-                clip-path: inset(-5% -5% -5% -5%);
-            }
+    //     &:hover {
+    //         .c-card__content {
+    //             clip-path: inset(-5% -5% -5% -5%);
+    //         }
 
-            .c-card__title-wrapper {
-                transform: translateX(0);
-            }
-        }
+    //         .c-card__title-wrapper {
+    //             transform: translateX(0);
+    //         }
+    //     }
 
-    }
+    // }
 }
 
 .c-calendar {
