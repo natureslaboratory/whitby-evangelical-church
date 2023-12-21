@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/whitbyec/new.whitbyec.com/
+    - export DEPLOYPATH=/home/whitbyec/public_html/
     - /bin/cp -R * $DEPLOYPATH
