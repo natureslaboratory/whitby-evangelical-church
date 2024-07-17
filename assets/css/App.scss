@@ -105,13 +105,13 @@ blockquote {
     background: rgba(0, 0, 0, 0.99);
 }
 
-p,
-li {
-    max-width: $mobile-width;
-}
+// p,
+// li {
+//     max-width: $mobile-width;
+// }
 
 h1 {
-    max-width: 15ch;
+    max-width: 30ch;
 }
 
 h2,
@@ -167,7 +167,7 @@ h3 {
     padding: 0 1rem;
 
     &.narrow {
-        max-width: 60em;
+        max-width: 50em;
     }
 }
 
@@ -179,7 +179,7 @@ h3 {
     margin: 0 auto;
 
     &.narrow {
-        max-width: 60em;
+        max-width: 50em;
     }
 }
 
@@ -642,6 +642,7 @@ body {
         font-size: 6rem;
         font-weight: $semibold;
         color: white;
+        text-align: center;
     }
 
     .c-header__sub-heading {

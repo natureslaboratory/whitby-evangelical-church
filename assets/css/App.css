@@ -73,13 +73,8 @@ blockquote {
   background: rgba(0, 0, 0, 0.99);
 }
 
-p,
-li {
-  max-width: 520px;
-}
-
 h1 {
-  max-width: 15ch;
+  max-width: 30ch;
 }
 
 h2,
@@ -129,7 +124,7 @@ h3 {
 }
 
 .restrict.narrow {
-  max-width: 60em;
+  max-width: 50em;
 }
 
 .l-restrict {
@@ -141,7 +136,7 @@ h3 {
 }
 
 .l-restrict.narrow {
-  max-width: 60em;
+  max-width: 50em;
 }
 
 .l-flow > * + * {
@@ -740,6 +735,7 @@ body {
   font-size: 6rem;
   font-weight: 620;
   color: white;
+  text-align: center;
 }
 
 .c-header .c-header__sub-heading {
