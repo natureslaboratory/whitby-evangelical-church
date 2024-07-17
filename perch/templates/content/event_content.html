@@ -1,3 +1,119 @@
 <perch:blocks>
     <perch:template path="/content/common_blocks.html">
+
+
+    <perch:block type="speakers" label="Speakers">
+        <div class="l-content-section l-restrict">
+        <h2 class="l-content-section__title">Speakers</h2>
+        <perch:repeater label="Speakers" type="speakers">
+            <perch:before><div class="c-speakers"></perch:before>
+                <div class="c-speaker">
+                    <img src="<perch:content id="speakerImage" type="image" width="500" height="500" label="Image">" alt="<perch:content id="speakerImageAlt" type="text" label="Image Alt">" class="c-speaker__image">
+                    <div class="c-speaker__content">
+                        <h3 class="c-speaker__name"><perch:content type="text" id="name" label="Name"></perch:content></h3>
+                        <div class="c-speaker__bio"><perch:content type="textarea" id="bio" label="Bio" editor="redactor" html ></perch:content></div>
+                    </div>
+                </div>
+            <perch:after></div></perch:after>
+        </perch:repeater>
+        </div>
+    </perch:block>
+
+
+    <perch:block type="key-details" label="Key Details">
+        <!-- has a summary section of key points (date, address, cost etc.) on left, and has description on right -->
+        <div class="l-content-section l-restrict">
+            <div class="c-key-details">
+                <div class="c-key-details__summary">
+                    <h2 class="c-key-details__title">Key Details</h2>
+                    <div class="c-key-details__summary-grid">
+                        <!-- Title -->
+                        <div class="c-key-details__item__label">
+                            <i class="fas fa-tag"></i>
+                            <span>Name</span>
+                        </div>
+                        <span><perch:content type="text" id="title" label="Title"></perch:content></span>
+    
+                        <!-- Date -->
+                        <div class="c-key-details__item__label">
+                            <i class="fas fa-calendar"></i>
+                            <span>Date</span>
+                        </div>
+                        <span><perch:content type="text" id="date" label="Date"></perch:content></span>
+    
+                        <!-- Address -->
+                        <div class="c-key-details__item__label">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Address</span>
+                        </div>
+                        <div class="c-key-details__item__date">
+                            <perch:content type="textarea" id="address" label="Address" editor="redactor" html></perch:content>
+                        </div>
+                        <!-- Cost -->
+                        <div class="c-key-details__item__label">
+                            <i class="fas fa-pound-sign"></i>
+                            <span>Cost</span>
+                        </div>
+                        <span><perch:content type="text" id="cost" label="Cost"></perch:content></span>
+                    </div>
+
+                    <a href="#booking-form" class="c-button c-button--secondary">Book Now</a>
+                </div>
+                <div>
+                    <div class="c-key-details__description l-flow">
+                        <h2 class="c-key-details__title">
+                            <perch:content type="text" id="description_title" label="Description Title">
+                        </h2>
+                        <perch:content type="textarea" id="description" label="Description" editor="redactor" html></perch:content>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </perch:block>
+
+    <perch:block type="booking-form" label="Booking Form">
+        <div class="l-content-section l-restrict narrow">
+            <h2 class="l-content-section__title">Book Now</h2>
+        
+            <perch:form id="bible-school-booking" method="post" app="perch_forms" class="c-form c-form--booking">
+                <div class="c-form" id="booking-form">
+                    <div class="c-form__cols">
+                        <div class="c-form__left-col">
+                            <div class="c-form__item">
+                                <perch:label for="attendeeName">Name</perch:label>
+                                <perch:input type="text" id="attendeeName" required="true" label="Name" antispam="name" />
+                                <perch:error for="attendeeName" type="required">Required</perch:error>
+                            </div>
+                            <div class="c-form__item">
+                                <perch:label for="attendeeEmail">Email</perch:label>
+                                <perch:input type="email" id="attendeeEmail" required="true" label="Email" antispam="email" />
+                                <perch:error for="attendeeEmail" type="required">Required</perch:error>
+                                <perch:error for="attendeeEmail" type="format">Check format of address</perch:error>
+                            </div>
+                            <div class="c-form__item">
+                                <perch:label for="attendeeChurch">Church</perch:label>
+                                <perch:input type="text" id="attendeeChurch" required="false" label="Email" />
+                            </div>
+                        </div>
+                        <div class="c-form__right-col">
+                            <div class="c-form__item">
+                                <perch:label for="attendeeDietary">Dietary requirements</perch:label>
+                                <perch:input type="textarea" id="attendeeDietary" required="false" label="Dietary Requirements" antispam="body" />
+                            </div>
+                            <div class="c-form__item">
+                                <perch:label for="attendeeAccommodation">Special accommodation requests</perch:label>
+                                <perch:input type="textarea" id="attendeeAccommodation" required="false" label="Accommodation Requests" antispam="body" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-form__item c-form__item--submit">
+                        <perch:input type="submit" id="submitAttendee" value="Submit" />
+                    </div>
+                    <perch:success>
+                        <p>Thank you. Your booking request has been submitted.</p>
+                    </perch:success>
+                </div>
+            </perch:form>
+        </div>
+    </perch:block>
 </perch:blocks>

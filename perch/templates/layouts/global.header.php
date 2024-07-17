@@ -23,7 +23,6 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-	<link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
 
 	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ropa+Sans&display=swap" media="print" onload="this.media='all'" />
@@ -49,6 +48,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
 	</noscript>
 	<link rel="stylesheet" type="text/css" href="/assets/css/App.css?t=1">
+	
+	<script src="https://kit.fontawesome.com/6b035dc64a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

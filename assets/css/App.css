@@ -80,6 +80,8 @@ h1 {
 h2,
 h3 {
   max-width: 25ch;
+  position: relative;
+  display: block;
 }
 
 .content {
@@ -189,6 +191,10 @@ h3 {
   width: auto;
 }
 
+.l-content-section .l-content-section__title {
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 768px) {
   .l-content-section {
     padding-top: 3rem;
@@ -196,6 +202,61 @@ h3 {
   .l-content-section:last-child {
     padding-bottom: 3rem;
   }
+}
+
+.c-form input, .c-form select, .c-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+}
+
+.c-form label {
+  font-size: 1.1rem;
+}
+
+.c-form .c-form__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+
+.c-form .c-form__item--submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.c-form input[type*="submit"] {
+  background-color: #187c8c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: auto;
+  min-width: 10rem;
+  font-size: 1rem;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  margin-top: 1rem;
+}
+
+.c-form .c-form__cols {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .c-button {
@@ -272,6 +333,57 @@ h3 {
     max-width: 520px;
     width: 100%;
   }
+}
+
+.c-key-details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 22rem auto;
+      grid-template-columns: 22rem auto;
+  gap: 3rem;
+}
+
+.c-key-details .c-key-details__description {
+  padding: 1rem 0;
+}
+
+.c-key-details .c-key-details__summary {
+  background-color: #f7f7f7;
+  padding: 1rem;
+}
+
+.c-key-details .c-key-details__summary h2 {
+  font-size: 1.25rem;
+}
+
+.c-key-details .c-key-details__summary .c-key-details__summary-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content auto;
+      grid-template-columns: -webkit-min-content auto;
+      grid-template-columns: min-content auto;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: 0.5rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.c-key-details .c-key-details__summary .c-key-details__item__label {
+  font-weight: 620;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.c-key-details .c-key-details__summary svg {
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.c-key-details .c-key-details__summary .c-button {
+  -webkit-column-span: 2;
+          column-span: 2;
 }
 
 .c-post {
@@ -377,6 +489,69 @@ h3 {
 .c-link-buttons .c-link-buttons__button:first-child {
   background-color: white;
   color: #187c8c;
+}
+
+.c-speakers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4rem;
+  max-width: 1100px;
+}
+
+.c-speakers :is(h2, h3)::before {
+  content: "";
+  position: absolute;
+  bottom: -0.625rem;
+  left: 0;
+  width: min(70%, 15rem);
+  height: 0.25rem;
+  background: #187c8c;
+  opacity: 0.7;
+}
+
+.c-speakers .c-speaker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2.5rem;
+}
+
+.c-speakers .c-speaker img {
+  height: 230px;
+  aspect-ratio: 13/16;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.c-speakers .c-speaker .c-speaker__content h3 {
+  max-width: unset;
+  margin-bottom: 2rem;
+}
+
+.c-speakers .c-speaker .c-speaker__bio p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.c-speakers .c-speaker:nth-child(2n) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  text-align: right;
+}
+
+.c-speakers .c-speaker:nth-child(2n) h3::before {
+  left: unset;
+  right: 0;
 }
 
 .c-leaders {
@@ -741,8 +916,7 @@ body {
 .c-header .c-header__sub-heading {
   font-size: 2.3rem;
   font-weight: 400;
-  margin-top: -5px;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
   color: white;
 }
 
@@ -844,6 +1018,7 @@ body {
 
 .c-header.c-header--small .c-header__headers {
   top: 0px;
+  padding: 1rem 0;
 }
 
 .c-header.c-header--small .c-header__sub-heading {
